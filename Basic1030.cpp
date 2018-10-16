@@ -26,7 +26,7 @@ int main(){
 	for(i=0;i<N;i++){
 		m=V[i];
 		M=m;
-		for(j=i;j<N;j++){
+		for(j=i+maxnum;j<N;j++){
 			if(V[j]<=m*p)
 				M=V[j];
 			else
