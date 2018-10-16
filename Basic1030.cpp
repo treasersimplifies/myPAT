@@ -2,10 +2,10 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
-//int < 4*10^9 ?
+//int < 4*10^9 ? yes!
 int main(){
 	int N;
-	long long p;
+	int p;
 	//long a[1000000000];
 	cin >> N >> p;
 	vector<int> V(N);// MUST be after "cin >> N >> p;"
