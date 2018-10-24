@@ -4,7 +4,6 @@
 #include <string>
 using namespace std;
 
-//int a[100000],m[100000];
 
 int main(){
 	// int frontflag=-1;
@@ -30,10 +29,11 @@ int main(){
 	}
 	cout << mcount <<endl;
 	for(int i=0;i<mcount;i++){
-		cout << f[i];
+		cout << f[i];cout << endl;
 		if(i < mcount -1)
 			cout << " ";
 	}
+
 	cout << endl;
 	return 0;
 
