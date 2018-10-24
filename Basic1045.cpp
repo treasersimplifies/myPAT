@@ -7,49 +7,34 @@ using namespace std;
 //int a[100000],m[100000];
 
 int main(){
-	int frontflag=-1;
-	int behindflag=-1;
+	// int frontflag=-1;
+	// int behindflag=-1;
+	int max=0;
 	int mcount=0;
 	int N=0;
 	cin >> N;
 	int *a = new int[N];
 	int *m = new int[N];
+	int *f = new int[N];
 
 	for(int i=0;i<N;i++){
 		cin >> a[i];
+		m[i]=a[i];
 	}
-
+	//Fast Version: By sorted array, the same position as raw array to decide the main element.
+	sort(m,m+N);
 	for(int i=0;i<N;i++){
-		int j;
-		for(j=0;j<i;j++){
-			if(a[j]>a[i]){
-				frontflag = -1; // not
-				break;
-			}
-		}
-		if(i==j) frontflag = j;
-		for(j=i+1;j<N;j++){
-			if(a[j]<a[i]){
-				frontflag = -1;
-				break;
-			}
-		}
-		if(j==N) behindflag = j;
-		if(frontflag!=-1&&behindflag!=-1){
-			//cout << a[i];
-			m[mcount]=a[i];
-			mcount++;
-			
-		}
+		if(a[i]==m[i]&&a[i]>max)
+			f[mcount++]=a[i];
+		max = a[i]>max?a[i]:max;
 	}
-
 	cout << mcount <<endl;
 	for(int i=0;i<mcount;i++){
-		cout << m[i];
-		if(i<mcount-1)
+		cout << f[i];
+		if(i < mcount -1)
 			cout << " ";
 	}
-
+	cout << endl;
 	return 0;
 
 }
